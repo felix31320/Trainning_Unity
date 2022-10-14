@@ -5,7 +5,7 @@ using UnityEngine;
 public class ball_monement : MonoBehaviour
 {
     private Rigidbody _rb;
-    private float _speed = 100f;
+    private float _speed = 2f;
     private Vector3 _forward = new Vector3(0,0,10);
     public string x;
 
@@ -27,31 +27,31 @@ public class ball_monement : MonoBehaviour
     {
         if (collision.collider.CompareTag("point"))
         {
-            
+            ScoreScript.Score += 1;
             Debug.Log(" 1+ point");
         }
     }
 
     private void MovePlayer()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKey(KeyCode.Z))
         {
-            _rb.AddForce(transform.forward * _speed, ForceMode.Force);
+            _rb.AddForce(Vector3.forward * _speed, ForceMode.Force);
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            _rb.AddForce(transform.forward * -_speed, ForceMode.Force);
+            _rb.AddForce(Vector3.back * _speed, ForceMode.Force);
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            _rb.AddForce(transform.right * _speed, ForceMode.Force);
+            _rb.AddForce(Vector3.right * _speed, ForceMode.Force);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
-            _rb.AddForce(transform.right * -_speed, ForceMode.Force);
+            _rb.AddForce(Vector3.left * _speed, ForceMode.Force);
         }
     }
 }
