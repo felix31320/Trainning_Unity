@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
-    public float timer = 10f;
+    public float timer = 20f;
     public TextMeshProUGUI Timertext;
     public int TimerInt;
     

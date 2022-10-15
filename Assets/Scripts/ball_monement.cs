@@ -6,8 +6,10 @@ public class ball_monement : MonoBehaviour
 {
     private Rigidbody _rb;
     private float _speed = 2f;
+    private float _saute = 5f;
     private Vector3 _forward = new Vector3(0,0,10);
     public string x;
+    public bool jump;
 
    
 
@@ -29,6 +31,15 @@ public class ball_monement : MonoBehaviour
         {
             ScoreScript.Score ++;
             Debug.Log(" 1+ point");
+        }
+
+        if (collision.collider.CompareTag("Sol"))
+        {
+            jump = true;
+        }
+        else
+        {
+            jump=false;
         }
     }
 
@@ -52,6 +63,12 @@ public class ball_monement : MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
         {
             _rb.AddForce(Vector3.left * _speed, ForceMode.Force);
+        }
+
+
+        if (Input.GetKey(KeyCode.Space) && jump == true)
+        {
+            _rb.AddForce(Vector3.up * _saute, ForceMode.Force);
         }
     }
 }

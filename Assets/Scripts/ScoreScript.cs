@@ -8,6 +8,7 @@ public class ScoreScript : MonoBehaviour
     public static int Score = 0;
     public TextMeshProUGUI score;
     public TimerScript TimerT;
+    public PauseMenu arrete;
 
     
 
@@ -22,11 +23,15 @@ public class ScoreScript : MonoBehaviour
 
         score.text = "Score : " + Score;
 
-
+        if(Score == 4 && arrete.isPaused == false)
+        {
+            arrete.PauseGame();
+        }
 
         if (TimerT.timer <= 0)
         {
             score.text = "Perdu !";
+            TimerT.enabled = true;
         }
         
     }
