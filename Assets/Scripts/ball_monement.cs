@@ -27,7 +27,7 @@ public class ball_monement : MonoBehaviour
     {
         if (collision.collider.CompareTag("point"))
         {
-            ScoreScript.Score += 1;
+            ScoreScript.Score ++;
             Debug.Log(" 1+ point");
         }
     }

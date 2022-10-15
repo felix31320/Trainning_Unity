@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class ScoreScript : MonoBehaviour
 {
     public static int Score = 0;
-    TextMeshProUGUI score;
+    public TextMeshProUGUI score;
+
+    
 
     void Start()
     {
@@ -16,6 +18,12 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         score.text = "Score : " + Score;
+        
+        
+        
+
     }
 }
