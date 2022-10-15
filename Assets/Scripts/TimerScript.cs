@@ -5,12 +5,12 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
-public class TimerText : MonoBehaviour
+public class TimerScript : MonoBehaviour
 {
-    public float timer = 20;
+    public float timer = 10f;
     public TextMeshProUGUI Timertext;
     public int TimerInt;
-    public ScoreScript scoreScript;
+    
 
 
     void Start()
@@ -25,16 +25,10 @@ public class TimerText : MonoBehaviour
         Timertext.text = (TimerInt + " Secondes");
 
 
-        if (TimerInt > 0)
+        if (timer > 0)
         {
             timer -= Time.deltaTime;
         }
-
-        if (TimerInt == 0)
-        {
-            scoreScript.score.text = "Perdu !";
-        }
-
 
     }
 

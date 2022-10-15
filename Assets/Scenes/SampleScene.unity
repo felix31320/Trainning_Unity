@@ -308,6 +308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: empty point test (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9044044963029308191, guid: 069ddc30223adff4c94e398906d69712, type: 3}
+      propertyPath: m_TagString
+      value: point
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 069ddc30223adff4c94e398906d69712, type: 3}
 --- !u!1 &139093397
@@ -1276,6 +1280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: empty point test (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9044044963029308191, guid: 069ddc30223adff4c94e398906d69712, type: 3}
+      propertyPath: m_TagString
+      value: point
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 069ddc30223adff4c94e398906d69712, type: 3}
 --- !u!1 &949133535
@@ -1727,6 +1735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b67b90b0984d9d4e9a31aaf46a0d2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 0}
+  TimerT: {fileID: 0}
 --- !u!1 &1149431304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,11 +2661,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085473357}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65d6dcfc42b28314da0fae770aa65e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 10
+  Timertext: {fileID: 0}
+  TimerInt: 0
 --- !u!1 &2113112208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9044044963029308191, guid: 069ddc30223adff4c94e398906d69712, type: 3}

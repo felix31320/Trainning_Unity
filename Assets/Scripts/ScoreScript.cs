@@ -7,6 +7,7 @@ public class ScoreScript : MonoBehaviour
 {
     public static int Score = 0;
     public TextMeshProUGUI score;
+    public TimerScript TimerT;
 
     
 
@@ -18,12 +19,15 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
         score.text = "Score : " + Score;
-        
-        
-        
 
+
+
+        if (TimerT.timer <= 0)
+        {
+            score.text = "Perdu !";
+        }
+        
     }
 }
