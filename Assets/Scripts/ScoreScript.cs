@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class ScoreScript : MonoBehaviour
 {
     public static int Score = 0;
-    TextMeshPro score;
+    TextMeshProUGUI score;
 
     void Start()
     {
-        score = GetComponent<TextMeshPro>();
+        score = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
