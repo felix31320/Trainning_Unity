@@ -6,10 +6,11 @@ public class ball_monement : MonoBehaviour
 {
     private Rigidbody _rb;
     private float _speed = 2f;
-    private float _saute = 5f;
+    private float _saute = 10f;
     private Vector3 _forward = new Vector3(0,0,10);
     public string x;
     public bool jump;
+    public PauseMenu pause;
 
    
 
@@ -22,7 +23,9 @@ public class ball_monement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
+        if (pause.isPaused == false) { 
+            MovePlayer();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -37,9 +40,14 @@ public class ball_monement : MonoBehaviour
         {
             jump = true;
         }
-        else
+        
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Sol"))
         {
-            jump=false;
+            jump = false;
         }
     }
 
@@ -65,10 +73,11 @@ public class ball_monement : MonoBehaviour
             _rb.AddForce(Vector3.left * _speed, ForceMode.Force);
         }
 
-
-        if (Input.GetKey(KeyCode.Space) && jump == true)
-        {
-            _rb.AddForce(Vector3.up * _saute, ForceMode.Force);
-        }
+         
+            if (Input.GetKey(KeyCode.Space) && jump == true)
+            {
+                _rb.AddForce(Vector3.up * _saute, ForceMode.Force);
+            }
+        
     }
 }
