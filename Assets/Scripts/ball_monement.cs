@@ -21,6 +21,7 @@ public class ball_monement : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         if (pause.isPaused == false) { 
